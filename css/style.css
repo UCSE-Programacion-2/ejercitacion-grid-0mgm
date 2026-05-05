@@ -22,7 +22,47 @@ img {
   height: auto;
 }
 
-/* TODO alumno:
-   Aplicar Grid en .exercice y .excercice-incomplete
-   con enfoque Mobile First + media queries.
-*/
+/* =====================
+   MOBILE FIRST (base)
+   Todo en una columna
+   ===================== */
+/* Vista Mobile (por defecto) */
+.exercice {
+  display: grid;
+  gap: 20px;
+}
+
+/* Grilla del rompecabezas 2x2 */
+.excercice-incomplete {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Crea dos columnas del mismo ancho */
+  gap: 2px;
+  /* Separación mínima para que se noten las piezas */
+}
+
+/* Vista Desktop */
+@media (min-width: 768px) {
+  .exercice {
+    grid-template-columns: 1fr 1fr;
+    /* Divide el contenedor en dos mitades */
+    align-items: start;
+  }
+}
+
+/* Reordenamiento visual de las piezas */
+.grid-one {
+  order: 4;
+}
+
+.grid-two {
+  order: 1;
+}
+
+.grid-three {
+  order: 2;
+}
+
+.grid-four {
+  order: 3;
+}
